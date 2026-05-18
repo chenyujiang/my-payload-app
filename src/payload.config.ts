@@ -9,6 +9,7 @@ import { Media } from './collections/Media'
 import { Pages } from './collections/Pages'
 import { Posts } from './collections/Posts'
 import { Users } from './collections/Users'
+import { Branding } from './Branding/config'
 import { Footer } from './Footer/config'
 import { Header } from './Header/config'
 import { plugins } from './plugins'
@@ -27,6 +28,15 @@ export default buildConfig({
       // The `BeforeDashboard` component renders the 'welcome' block that you see after logging into your admin panel.
       // Feel free to delete this at any time. Simply remove the line below.
       beforeDashboard: ['@/components/BeforeDashboard'],
+      graphics: {
+        Icon: '@/Branding/AdminIcon',
+        Logo: '@/Branding/AdminLogo',
+      },
+    },
+    meta: {
+      icons: {
+        icon: '/brand/favicon',
+      },
     },
     importMap: {
       baseDir: path.resolve(dirname),
@@ -64,7 +74,7 @@ export default buildConfig({
   }),
   collections: [Pages, Posts, Media, Categories, Users],
   cors: [getServerSideURL()].filter(Boolean),
-  globals: [Header, Footer],
+  globals: [Branding, Header, Footer],
   plugins,
   secret: process.env.PAYLOAD_SECRET,
   sharp,

@@ -1,0 +1,6 @@
+- Use Payload v3 patterns
+- Use TypeScript only
+- Prefer Globals for settings
+- Prefer Blocks for page builder
+- Use PostgreSQL
+- Use Next.js App Router
